@@ -15,12 +15,12 @@ public class BirdController : MonoBehaviour
     }
     void Update() 
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)&&game_Manager.gameOver==false)
         {
             game_Manager.gameStart=true;
             Time.timeScale=1;
             game_Manager.gameReadyPanel.SetActive(false);
-            rb.velocity=Vector2.up*Time.deltaTime*270;
+            rb.velocity=Vector2.up*Time.deltaTime*310;
             game_Manager.audioSource.PlayOneShot(game_Manager.audioClips[0]);
         }
     }
@@ -40,6 +40,7 @@ public class BirdController : MonoBehaviour
         {
            game_Manager.audioSource.PlayOneShot(game_Manager.audioClips[2]);
            game_Manager.gameoverPanel.SetActive(true);
+           game_Manager.gameOver=true;
            Time.timeScale=0;
         }
     }
