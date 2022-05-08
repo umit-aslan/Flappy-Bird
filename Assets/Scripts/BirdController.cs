@@ -25,7 +25,9 @@ public class BirdController : MonoBehaviour
     {
         if (other.CompareTag("score"))
         {
-            game_Manager.scoreText.text+=1.ToString();
+           game_Manager.score++;
+           game_Manager.scoreText.text=game_Manager.score.ToString();
+            
         }
     }
 }
