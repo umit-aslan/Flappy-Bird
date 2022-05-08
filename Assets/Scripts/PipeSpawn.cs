@@ -23,10 +23,10 @@ public class PipeSpawn : MonoBehaviour
         while (true)
         {
         Vector3 poz=new Vector2(transform.position.x,Random.Range(-5f,-1f));
-        Instantiate(pipe,poz,Quaternion.identity);
+        GameObject PipeObject=Instantiate(pipe,poz,Quaternion.identity);
         yield return new WaitForSeconds(2);
 
-        Destroy(pipe,13f);
+        Destroy(PipeObject,5f);
         }
     }
 }

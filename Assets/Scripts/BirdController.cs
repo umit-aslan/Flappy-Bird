@@ -15,7 +15,7 @@ public class BirdController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            rb.velocity=Vector2.up*Time.deltaTime*400;
+            rb.velocity=Vector2.up*Time.deltaTime*270;
             
         }
     }
