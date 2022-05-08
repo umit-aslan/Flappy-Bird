@@ -17,7 +17,7 @@ public class BirdController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             rb.velocity=Vector2.up*Time.deltaTime*270;
-            
+            game_Manager.audioSource.PlayOneShot(game_Manager.audioClips[0]);
         }
     }
     
@@ -27,7 +27,15 @@ public class BirdController : MonoBehaviour
         {
            game_Manager.score++;
            game_Manager.scoreText.text=game_Manager.score.ToString();
-            
+           game_Manager.audioSource.PlayOneShot(game_Manager.audioClips[1]);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D other) 
+    {
+        if (other.gameObject.CompareTag("die"))
+        {
+           game_Manager.audioSource.PlayOneShot(game_Manager.audioClips[2]);
+           Time.timeScale=0;
         }
     }
 }
