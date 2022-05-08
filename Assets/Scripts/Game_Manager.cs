@@ -10,13 +10,16 @@ public class Game_Manager : MonoBehaviour
     public int score=0;
     public AudioSource audioSource;
     public AudioClip[] audioClips;
+    public GameObject gameoverPanel;
+    public bool gameStart=false;
+    public GameObject gameReadyPanel;
     void Start()
     {
         audioSource=GetComponent<AudioSource>();
     }
 
    
-    void Update()
+    void Restart()
     {
         
     }

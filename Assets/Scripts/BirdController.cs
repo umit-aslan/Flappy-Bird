@@ -9,6 +9,7 @@ public class BirdController : MonoBehaviour
     
     void Start()
     {
+        Time.timeScale=0;
         rb=GetComponent<Rigidbody2D>();
         game_Manager=FindObjectOfType<Game_Manager>();
     }
@@ -16,6 +17,9 @@ public class BirdController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            game_Manager.gameStart=true;
+            Time.timeScale=1;
+            game_Manager.gameReadyPanel.SetActive(false);
             rb.velocity=Vector2.up*Time.deltaTime*270;
             game_Manager.audioSource.PlayOneShot(game_Manager.audioClips[0]);
         }
@@ -35,6 +39,7 @@ public class BirdController : MonoBehaviour
         if (other.gameObject.CompareTag("die"))
         {
            game_Manager.audioSource.PlayOneShot(game_Manager.audioClips[2]);
+           game_Manager.gameoverPanel.SetActive(true);
            Time.timeScale=0;
         }
     }
