@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class Game_Manager : MonoBehaviour
 {
- 
     public TextMeshProUGUI scoreText;
     public int score=0;
     public AudioSource audioSource;
@@ -19,10 +18,7 @@ public class Game_Manager : MonoBehaviour
     {
         audioSource=GetComponent<AudioSource>();
     }
-
-
-   
-   public void Restart()
+    public void Restart()
     {
         SceneManager.LoadScene(0);
     }

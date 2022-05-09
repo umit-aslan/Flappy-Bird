@@ -5,19 +5,10 @@ using UnityEngine;
 public class PipeSpawn : MonoBehaviour
 {
     public GameObject pipe;
-
     void Start()
     {
-        
         StartCoroutine(Spawn());
     }
-
- 
-    void Update()
-    {
-        
-    }
-
     IEnumerator Spawn()
     {
         while (true)
@@ -25,7 +16,6 @@ public class PipeSpawn : MonoBehaviour
         Vector3 poz=new Vector2(transform.position.x,Random.Range(-5f,-1f));
         GameObject PipeObject=Instantiate(pipe,poz,Quaternion.identity);
         yield return new WaitForSeconds(1.8f);
-
         Destroy(PipeObject,5f);
         }
     }
