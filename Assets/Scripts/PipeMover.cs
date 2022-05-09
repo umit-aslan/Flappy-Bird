@@ -12,6 +12,6 @@ public class PipeMover : MonoBehaviour
     void Update()
     {
         
-        transform.Translate(Vector2.left*Time.deltaTime*3);
+        transform.Translate(Vector2.left*Time.deltaTime*2);
     }
 }

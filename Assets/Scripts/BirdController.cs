@@ -6,7 +6,7 @@ public class BirdController : MonoBehaviour
 {
     Rigidbody2D rb;
     Game_Manager game_Manager;
-    
+    public float velocity=1f;
     void Start()
     {
         Time.timeScale=0;
@@ -20,9 +20,12 @@ public class BirdController : MonoBehaviour
             game_Manager.gameStart=true;
             Time.timeScale=1;
             game_Manager.gameReadyPanel.SetActive(false);
-            rb.velocity=Vector2.up*Time.deltaTime*310;
+            rb.velocity=Vector2.zero;
+            rb.velocity=Vector2.up*velocity;
             game_Manager.audioSource.PlayOneShot(game_Manager.audioClips[0]);
+            
         }
+     
     }
     
     private void OnTriggerEnter2D(Collider2D other) 
