@@ -15,7 +15,7 @@ public class PipeSpawn : MonoBehaviour
         {
         Vector3 poz=new Vector2(transform.position.x,Random.Range(-5f,-1f));
         GameObject PipeObject=Instantiate(pipe,poz,Quaternion.identity);
-        yield return new WaitForSeconds(1.8f);
+        yield return new WaitForSeconds(1.7f);
         Destroy(PipeObject,5f);
         }
     }
