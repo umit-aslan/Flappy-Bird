@@ -10,7 +10,7 @@ public class BirdController : MonoBehaviour
     void Start()
     {
         Time.timeScale=0;
-        rb=GetComponent<Rigidbody2D>();
+        rb=GetComponent<Rigidbody2D>();//get the rigidbody
         game_Manager=FindObjectOfType<Game_Manager>();//find the game manager
     }
     void Update() 
@@ -32,19 +32,19 @@ public class BirdController : MonoBehaviour
     {
         if (other.CompareTag("score"))
         {
-           game_Manager.score++;
-           game_Manager.scoreText.text=game_Manager.score.ToString();
-           game_Manager.audioSource.PlayOneShot(game_Manager.audioClips[1]);
+           game_Manager.score++;//add one to the score
+           game_Manager.scoreText.text=game_Manager.score.ToString();//set the score text to the score
+           game_Manager.audioSource.PlayOneShot(game_Manager.audioClips[1]);//play the audio clip
         }
     }
     private void OnCollisionEnter2D(Collision2D other) 
     {
         if (other.gameObject.CompareTag("die"))
         {
-           game_Manager.audioSource.PlayOneShot(game_Manager.audioClips[2]);
-           game_Manager.gameoverPanel.SetActive(true);
-           game_Manager.gameOver=true;
-           Time.timeScale=0;
+           game_Manager.audioSource.PlayOneShot(game_Manager.audioClips[2]);//play the audio clip
+           game_Manager.gameoverPanel.SetActive(true);//show the game over panel
+           game_Manager.gameOver=true;//set the game over to true
+           Time.timeScale=0;//set the time scale to 0
         }
     }
 }
