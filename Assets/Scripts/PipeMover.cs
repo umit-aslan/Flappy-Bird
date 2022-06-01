@@ -6,6 +6,6 @@ public class PipeMover : MonoBehaviour
 {
     void Update()
     { 
-        transform.Translate(Vector2.left*Time.deltaTime*1.8f);
+        transform.Translate(Vector2.left*Time.deltaTime*2);//Pipe moves left
     }
 }
