@@ -15,7 +15,7 @@ public class BirdController : MonoBehaviour
     }
     void Update() 
     {
-        if (Input.GetMouseButtonDown(0)&&game_Manager.gameOver==false)
+        if (Input.GetMouseButtonDown(0)&&game_Manager.gameOver==false)//if the mouse is clicked and the game is not over
         {
             game_Manager.gameStart=true;//start the game
             Time.timeScale=1;//set the time scale to 1
