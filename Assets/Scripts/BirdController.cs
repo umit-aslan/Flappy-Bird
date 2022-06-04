@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class BirdController : MonoBehaviour
 {
-    Rigidbody2D rb;
-    Game_Manager game_Manager;
-    public float velocity=1f;
+    Rigidbody2D rb;//rigidbody
+    Game_Manager game_Manager;//reference to the game manager
+    public float velocity=1f;//velocity of the bird
     void Start()
     {
-        Time.timeScale=0;
+        Time.timeScale=0;//pause the game
         rb=GetComponent<Rigidbody2D>();//get the rigidbody
         game_Manager=FindObjectOfType<Game_Manager>();//find the game manager
     }
